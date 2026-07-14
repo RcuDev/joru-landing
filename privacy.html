@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joru — Privacy Policy</title>
+<meta name="description" content="How Joru handles your data: on-device AI, local-first storage, optional encrypted sync, opt-in analytics, and clearly-labeled affiliate links. GDPR-aligned.">
+<meta name="theme-color" content="#E4620C">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+<style>
+  :root {
+    --paper: #F4F6F5;
+    --surface: #FFFFFF;
+    --surface-2: #EFF3F1;
+    --ink: #16211F;
+    --slate: #566662;
+    --line: #DBE2DF;
+    --accent: #E4620C;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #FBE6D6;
+    --map: #1E6F6A;
+    --shadow: 0 1px 2px rgba(20,33,31,.05), 0 12px 32px -12px rgba(20,33,31,.18);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0D1514; --surface: #15201E; --surface-2: #101A18; --ink: #E9EFED;
+      --slate: #92A49F; --line: #263331; --accent: #FF7A2E; --accent-ink: #1A0E06;
+      --accent-soft: rgba(255,122,46,.14); --map: #47A29B;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 20px 40px -18px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="light"] {
+    --paper: #F4F6F5; --surface: #FFFFFF; --surface-2: #EFF3F1; --ink: #16211F;
+    --slate: #566662; --line: #DBE2DF; --accent: #E4620C; --accent-ink: #FFFFFF;
+    --accent-soft: #FBE6D6; --map: #1E6F6A;
+    --shadow: 0 1px 2px rgba(20,33,31,.05), 0 12px 32px -12px rgba(20,33,31,.18);
+  }
+  :root[data-theme="dark"] {
+    --paper: #0D1514; --surface: #15201E; --surface-2: #101A18; --ink: #E9EFED;
+    --slate: #92A49F; --line: #263331; --accent: #FF7A2E; --accent-ink: #1A0E06;
+    --accent-soft: rgba(255,122,46,.14); --map: #47A29B;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 20px 40px -18px rgba(0,0,0,.6);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.65; -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", "Segoe UI Mono", Menlo, Consolas, monospace; }
+  .wrap { width: min(1080px, 92vw); margin-inline: auto; }
+  .read { max-width: 72ch; }
+
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", "Cascadia Code", "Segoe UI Mono", Menlo, Consolas, monospace;
+    font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--map); font-weight: 600;
+  }
+
+  /* top bar */
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding-block: 1.4rem; }
+  .brand { display: flex; align-items: center; gap: .6rem; font-weight: 800; letter-spacing: -.01em; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+  .brand .pin { width: 26px; height: 26px; border-radius: 50% 50% 50% 2px; transform: rotate(-45deg); background: var(--accent); position: relative; flex: none; }
+  .brand .pin::after { content: ""; position: absolute; inset: 8px; background: var(--surface); border-radius: 50%; }
+  .topbar .status { color: var(--slate); font-size: .8rem; }
+
+  /* header */
+  header.page { padding-block: clamp(1.5rem, 4vw, 2.6rem) clamp(1.5rem, 4vw, 2.4rem); border-bottom: 1px solid var(--line); }
+  header.page h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.05; letter-spacing: -.025em; font-weight: 800; margin: .8rem 0 0; text-wrap: balance; }
+  header.page .lede { color: var(--slate); font-size: 1.05rem; margin: 1rem 0 0; }
+  header.page .updated { color: var(--slate); font-size: .85rem; margin-top: 1rem; }
+
+  /* TL;DR box */
+  .summary { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 1.3rem 1.4rem; margin-top: 1.8rem; }
+  .summary h2 { font-size: 1rem; margin: 0 0 .6rem; letter-spacing: -.01em; }
+  .summary ul { margin: 0; padding-left: 1.1rem; }
+  .summary li { margin: .35rem 0; color: var(--slate); }
+  .summary li b { color: var(--ink); font-weight: 650; }
+
+  /* sections */
+  section.band { padding-block: clamp(2rem, 5vw, 3.2rem); border-top: 1px solid var(--line); }
+  section.band:first-of-type { border-top: 0; }
+  .band h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); letter-spacing: -.02em; font-weight: 800; margin: .5rem 0 0; text-wrap: balance; }
+  .band h3 { font-size: 1.08rem; letter-spacing: -.01em; margin: 1.6rem 0 .3rem; }
+  .band p, .band li { color: var(--slate); }
+  .band p { margin: .8rem 0 0; }
+  .band a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .band a:hover { border-color: var(--accent); }
+  .band ul { margin: .7rem 0 0; padding-left: 1.15rem; }
+  .band li { margin: .35rem 0; }
+  .band li b, .band p b { color: var(--ink); font-weight: 650; }
+
+  .tagpill { font-family: ui-monospace, monospace; font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; color: var(--map); border: 1px solid color-mix(in srgb, var(--map) 40%, transparent); padding: .12rem .45rem; border-radius: 6px; white-space: nowrap; }
+
+  /* data table */
+  .table-scroll { overflow-x: auto; margin-top: 1.2rem; border: 1px solid var(--line); border-radius: 14px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: .92rem; }
+  thead th { text-align: left; background: var(--surface-2); color: var(--ink); font-weight: 700; padding: .8rem 1rem; border-bottom: 1px solid var(--line); }
+  tbody td { padding: .8rem 1rem; border-bottom: 1px solid var(--line); color: var(--slate); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody td:first-child { color: var(--ink); font-weight: 620; white-space: nowrap; }
+
+  /* footer */
+  footer { border-top: 1px solid var(--line); padding-block: 2.4rem 3rem; color: var(--slate); font-size: .88rem; margin-top: 1rem; }
+  .foot-grid { display: flex; flex-wrap: wrap; gap: 1.2rem 2.5rem; justify-content: space-between; align-items: flex-start; }
+  footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  footer a:hover { border-color: var(--accent); }
+  .attrib { max-width: 44ch; }
+
+  a:focus-visible, .brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="wrap topbar">
+  <a class="brand" href="./index.html"><span class="pin" aria-hidden="true"></span> Joru</a>
+  <div class="status mono">PRIVACY POLICY</div>
+</header>
+
+<header class="wrap page read">
+  <span class="eyebrow">Legal · Privacy</span>
+  <h1>Privacy Policy</h1>
+  <p class="lede">Joru is a travel planner whose AI runs on your device. This policy explains what data the app handles, what stays on your phone, what leaves it and why, and the controls you have. Plain language first, details below.</p>
+  <p class="updated mono">Last updated: 14 July 2026 · Applies to the Joru app for Android</p>
+
+  <div class="summary">
+    <h2>The short version</h2>
+    <ul>
+      <li><b>Your trips stay on your device.</b> Nothing is uploaded unless you turn on sync.</li>
+      <li><b>The AI is on-device.</b> Your preferences and itineraries are never sent to a cloud AI provider.</li>
+      <li><b>Facts come from open data.</b> To find real places, weather and maps, the app sends the destination or map area (e.g. a city name or coordinates) to open services — not your saved trips or traveler details.</li>
+      <li><b>Analytics and crash reports are opt-in</b> and off by default. <b>No ads. No cross-app tracking. We never sell your data.</b></li>
+      <li><b>You're in control:</b> export all trips, erase all local data, disable sync, or turn analytics off — any time.</li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap read">
+
+  <section class="band">
+    <span class="eyebrow">Who we are</span>
+    <h2>Data controller</h2>
+    <p>Joru is developed by <b>RcuDev</b> (individual developer, Spain — EU). For any privacy question or data request, contact <a href="mailto:rcu.developer@gmail.com">rcu.developer@gmail.com</a>. “Joru” is a working name for the app while in development.</p>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">What the app handles</span>
+    <h2>Data you enter, kept on your device</h2>
+    <p>To build a plan, Joru uses the details you provide in the trip form and while using the app. These are stored <b>locally on your device</b> and are not sent anywhere unless you explicitly enable sync (see below):</p>
+    <ul>
+      <li>Trip destinations and dates.</li>
+      <li>Number of travelers and, optionally, <b>children's ages</b> (used only to tailor the plan).</li>
+      <li>Preferences: pace, interests, budget, cuisine and dietary needs, mobility, accommodation and transport choices.</li>
+      <li>Your generated itineraries, real-spend entries and packing checklists.</li>
+    </ul>
+    <p>Joru <b>does not require an account</b> to plan trips, and does not ask for your name, phone number or contacts.</p>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">Facts &amp; connectivity</span>
+    <h2>Open-data services the app contacts</h2>
+    <p>Joru is not an “offline” app: to keep every place, guide and forecast <b>real</b>, it fetches facts from open data over the network. To do that it sends the <b>destination or map area</b> (a place name, a search query or coordinates) to the services below. It does <b>not</b> send your saved trips, traveler details, budget or other personal preferences to them. As with any web request, these services receive your device's IP address and process it under their own policies.</p>
+    <ul>
+      <li><b>OpenStreetMap / Overpass</b> — real places and points of interest.</li>
+      <li><b>Nominatim</b> (OpenStreetMap) — turning a place name into coordinates.</li>
+      <li><b>Wikivoyage / Wikipedia</b> — area guides and place descriptions and images.</li>
+      <li><b>Open-Meteo</b> — weather for your destination and dates.</li>
+      <li><b>MapTiler</b> — interactive map tiles when you open the map.</li>
+    </ul>
+    <p>Map data © OpenStreetMap contributors (ODbL); guides from Wikivoyage (CC BY-SA); forecasts from Open-Meteo. The <b>AI model runs locally</b> on your device — your preferences and itinerary are never sent to a cloud AI provider.</p>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">Optional features</span>
+    <h2>Sign-in, sync, analytics and purchases</h2>
+    <p>These features send data off your device, so each is <b>optional</b> and, where required, asks for your consent.</p>
+
+    <h3>Sync with your own Google Drive <span class="tagpill">Optional</span></h3>
+    <p>If you turn on sync, Joru saves a copy of your trips to your <b>own Google Drive private app storage</b> (the app can only see files it created; it cannot read the rest of your Drive). The snapshot is <b>encrypted before upload</b>, and your Google access token is kept in the device's secure storage, never in plain text. You can disable sync or revoke Joru's access from your Google Account at any time.</p>
+
+    <h3>Google Sign-in <span class="tagpill">Optional</span></h3>
+    <p>Signing in with Google is only used to enable Drive sync. Joru receives a basic account identifier and an authorization token for Drive; it does not post anything to your account or read your other Google data.</p>
+
+    <h3>Usage analytics &amp; crash reports <span class="tagpill">Opt-in · off by default</span></h3>
+    <p>Joru can use <b>Google Firebase</b> for anonymous usage analytics and crash reporting to fix bugs and improve the app. This is <b>disabled by default</b> and only starts if you turn it on. When enabled, Firebase may collect an app-instance identifier, in-app events, and — for crashes — diagnostic device information and stack traces. It is <b>not</b> tied to your name and is <b>not</b> used for advertising. You can turn it off again at any time in Settings; the app also uses Firebase Remote Config to adjust settings (such as the on-device model), which does not require personal data.</p>
+
+    <h3>Premium purchases <span class="tagpill">Optional</span></h3>
+    <p>Premium (a subscription or a one-time lifetime purchase) is handled by <b>Google Play Billing</b> and <b>RevenueCat</b>, which manage the purchase and unlock your entitlement. RevenueCat receives an anonymous app-user identifier and the purchase token; <b>we never receive your payment card details</b> — those are handled by Google Play.</p>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">Booking links</span>
+    <h2>Affiliate links</h2>
+    <p>Once your plan is ready, Joru may show links to trusted travel partners (for stays, tours &amp; tickets, car rental, airport transfers, eSIM data, travel insurance, trains &amp; buses). These are <b>clearly labeled as “affiliate link”</b>. There is <b>no advertising SDK and no tracking before you click</b>. If you choose to open one, the partner's website may set its own cookies and identifiers under <b>its own privacy policy</b>, and we may earn a small commission at no extra cost to you — which keeps the free version free. Partners are reached through networks such as Travelpayouts, Impact and Amazon Associates.</p>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">At a glance</span>
+    <h2>Data summary</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Why</th><th>Where it lives</th><th>Basis</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Trip details &amp; preferences</td><td>Build your itinerary</td><td>On your device</td><td>Providing the service</td></tr>
+          <tr><td>Destination / map queries</td><td>Fetch real places, weather, maps</td><td>Sent to open-data services</td><td>Providing the service</td></tr>
+          <tr><td>Trips backup</td><td>Sync across your devices</td><td>Your own Google Drive (encrypted)</td><td>Your consent</td></tr>
+          <tr><td>Google account token</td><td>Enable Drive sync</td><td>Device secure storage</td><td>Your consent</td></tr>
+          <tr><td>Usage &amp; crash data</td><td>Fix bugs, improve app</td><td>Firebase (if enabled)</td><td>Your consent (opt-in)</td></tr>
+          <tr><td>Purchase token</td><td>Unlock Premium</td><td>Google Play &amp; RevenueCat</td><td>Providing the service</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">Your rights (GDPR)</span>
+    <h2>Control and legal bases</h2>
+    <p>Joru is built in the EU and follows the <b>GDPR</b>. Our legal bases are: <b>performance of the service</b> for core planning, and <b>your consent</b> for sync, analytics and crash reporting (which you can withdraw at any time). We follow <b>data minimization</b> — we don't collect more than a feature needs.</p>
+    <p>You can exercise your rights directly in the app, without contacting anyone:</p>
+    <ul>
+      <li><b>Access &amp; portability:</b> export all your trips from the app.</li>
+      <li><b>Erasure:</b> “Delete all local data” wipes everything on the device; disabling and deleting your Drive backup removes the synced copy from your own Drive.</li>
+      <li><b>Withdraw consent:</b> turn analytics off, or disable sync, in Settings at any time.</li>
+    </ul>
+    <p>You may also contact <a href="mailto:rcu.developer@gmail.com">rcu.developer@gmail.com</a> for any request, and you have the right to lodge a complaint with your local data protection authority.</p>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">Retention &amp; security</span>
+    <h2>How long, and how it's protected</h2>
+    <ul>
+      <li><b>On your device:</b> kept until you delete it (per trip, or all at once).</li>
+      <li><b>Drive backup:</b> kept in your own Google Drive until you delete it or turn off sync.</li>
+      <li><b>Analytics/crash data:</b> retained by Firebase per Google's retention settings; only exists if you opted in.</li>
+    </ul>
+    <p>Snapshots are <b>encrypted before upload</b>, access tokens are stored in the device's secure keystore, and all network traffic uses <b>HTTPS</b>. Some services above (Google/Firebase and the open-data providers) may process requests on servers <b>outside the EU</b>, under their own safeguards for international transfers.</p>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">Children</span>
+    <h2>Not directed to children</h2>
+    <p>Joru is a general-audience travel planner and is <b>not directed to children</b>. You may enter children's ages when planning a family trip; this is used only to tailor the itinerary, stays on your device, and is <b>never used to profile a minor</b> or for advertising.</p>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">AI transparency</span>
+    <h2>Plans are AI-generated</h2>
+    <p>Itineraries are drafted by an on-device AI model, which arranges and describes <b>real</b> candidates from open data. Plans <b>may contain errors</b> and are not professional travel advice — please verify opening hours, prices and availability before you travel.</p>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">Updates</span>
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, we'll update the date at the top and, for significant changes, note it in the app. Continued use after an update means you accept the revised policy.</p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div class="foot-grid">
+    <div>
+      <a class="brand" href="./index.html" style="font-size:1rem;"><span class="pin" aria-hidden="true"></span> Joru</a>
+      <p class="attrib" style="margin:.7rem 0 0;">On-device AI travel planner. Currently in development — “Joru” is a working name.</p>
+    </div>
+    <div class="attrib">
+      Built on open data — map data © OpenStreetMap contributors (ODbL), guides from Wikivoyage (CC BY-SA), forecasts from Open-Meteo.
+    </div>
+    <div>
+      Contact · <a href="mailto:rcu.developer@gmail.com">rcu.developer@gmail.com</a><br>
+      <a href="./index.html">Home</a> · <span class="mono" style="font-size:.8rem;">Made by RcuDev · 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
