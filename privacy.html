@@ -124,7 +124,7 @@
   <span class="eyebrow">Legal · Privacy</span>
   <h1>Privacy Policy</h1>
   <p class="lede">Joru is a travel planner whose AI runs on your device. This policy explains what data the app handles, what stays on your phone, what leaves it and why, and the controls you have. Plain language first, details below.</p>
-  <p class="updated mono">Last updated: 14 July 2026 · Applies to the Joru app for Android</p>
+  <p class="updated mono">Last updated: 16 July 2026 · Applies to the Joru app for Android</p>
 
   <div class="summary">
     <h2>The short version</h2>
@@ -132,7 +132,7 @@
       <li><b>Your trips stay on your device.</b> Nothing is uploaded unless you turn on sync.</li>
       <li><b>The AI is on-device.</b> Your preferences and itineraries are never sent to a cloud AI provider.</li>
       <li><b>Facts come from open data.</b> To find real places, weather and maps, the app sends the destination or map area (e.g. a city name or coordinates) to open services — not your saved trips or traveler details.</li>
-      <li><b>Analytics and crash reports are opt-in</b> and off by default. <b>No ads. No cross-app tracking. We never sell your data.</b></li>
+      <li><b>Usage analytics are opt-in</b> and off by default. <b>Crash reports are on by default</b> (to keep the app stable) and you can turn them off anytime. <b>No ads. No cross-app tracking. We never sell your data.</b></li>
       <li><b>You're in control:</b> export all trips, erase all local data, disable sync, or turn analytics off — any time.</li>
     </ul>
   </div>
@@ -184,8 +184,13 @@
     <h3>Google Sign-in <span class="tagpill">Optional</span></h3>
     <p>Signing in with Google is only used to enable Drive sync. Joru receives a basic account identifier and an authorization token for Drive; it does not post anything to your account or read your other Google data.</p>
 
-    <h3>Usage analytics &amp; crash reports <span class="tagpill">Opt-in · off by default</span></h3>
-    <p>Joru can use <b>Google Firebase</b> for anonymous usage analytics and crash reporting to fix bugs and improve the app. This is <b>disabled by default</b> and only starts if you turn it on. When enabled, Firebase may collect an app-instance identifier, in-app events, and — for crashes — diagnostic device information and stack traces. It is <b>not</b> tied to your name and is <b>not</b> used for advertising. You can turn it off again at any time in Settings; the app also uses Firebase Remote Config to adjust settings (such as the on-device model), which does not require personal data.</p>
+    <h3>Crash reports &amp; usage analytics <span class="tagpill">Firebase</span></h3>
+    <p>Joru uses <b>Google Firebase</b> for two separate things, with two separate controls in Settings:</p>
+    <ul>
+      <li><b>Crash reports — on by default</b> (legitimate interest). When the app crashes, Firebase Crashlytics collects diagnostic device information and a stack trace so we can fix the bug. This contains <b>no behavioral tracking</b> and is <b>not</b> tied to your name or used for advertising. You can <b>turn it off anytime</b> in Settings.</li>
+      <li><b>Usage analytics — opt-in, off by default.</b> Anonymous in-app events that help us improve the app. This <b>only starts if you turn it on</b> — either from the one-time prompt on first launch or the toggle in Settings — and you can turn it off again anytime.</li>
+    </ul>
+    <p>Neither uses your advertising ID. The app also uses Firebase Remote Config to adjust settings (such as the on-device model), which does not require personal data.</p>
 
     <h3>Premium purchases <span class="tagpill">Optional</span></h3>
     <p>Premium (a subscription or a one-time lifetime purchase) is handled by <b>Google Play Billing</b> and <b>RevenueCat</b>, which manage the purchase and unlock your entitlement. RevenueCat receives an anonymous app-user identifier and the purchase token; <b>we never receive your payment card details</b> — those are handled by Google Play.</p>
@@ -210,7 +215,8 @@
           <tr><td>Destination / map queries</td><td>Fetch real places, weather, maps</td><td>Sent to open-data services</td><td>Providing the service</td></tr>
           <tr><td>Trips backup</td><td>Sync across your devices</td><td>Your own Google Drive (encrypted)</td><td>Your consent</td></tr>
           <tr><td>Google account token</td><td>Enable Drive sync</td><td>Device secure storage</td><td>Your consent</td></tr>
-          <tr><td>Usage &amp; crash data</td><td>Fix bugs, improve app</td><td>Firebase (if enabled)</td><td>Your consent (opt-in)</td></tr>
+          <tr><td>Crash reports</td><td>Fix bugs, keep app stable</td><td>Firebase Crashlytics</td><td>Legitimate interest (opt-out)</td></tr>
+          <tr><td>Usage analytics</td><td>Improve the app</td><td>Firebase (if enabled)</td><td>Your consent (opt-in)</td></tr>
           <tr><td>Purchase token</td><td>Unlock Premium</td><td>Google Play &amp; RevenueCat</td><td>Providing the service</td></tr>
         </tbody>
       </table>
@@ -220,12 +226,12 @@
   <section class="band">
     <span class="eyebrow">Your rights (GDPR)</span>
     <h2>Control and legal bases</h2>
-    <p>Joru is built in the EU and follows the <b>GDPR</b>. Our legal bases are: <b>performance of the service</b> for core planning, and <b>your consent</b> for sync, analytics and crash reporting (which you can withdraw at any time). We follow <b>data minimization</b> — we don't collect more than a feature needs.</p>
+    <p>Joru is built in the EU and follows the <b>GDPR</b>. Our legal bases are: <b>performance of the service</b> for core planning; <b>your consent</b> for sync and usage analytics (which you can withdraw at any time); and <b>legitimate interest</b> for crash reports, which keep the app stable and which you can turn off in Settings. We follow <b>data minimization</b> — we don't collect more than a feature needs.</p>
     <p>You can exercise your rights directly in the app, without contacting anyone:</p>
     <ul>
       <li><b>Access &amp; portability:</b> export all your trips from the app.</li>
       <li><b>Erasure:</b> open <b>Settings → Data → “Delete all local data”</b> in the app to wipe everything stored on the device (trips, expenses, packing lists and preferences). Disabling and deleting your Drive backup removes the synced copy from your own Drive.</li>
-      <li><b>Withdraw consent:</b> turn analytics off, or disable sync, in Settings at any time.</li>
+      <li><b>Withdraw consent / object:</b> turn usage analytics or crash reports off, or disable sync, in Settings at any time.</li>
     </ul>
     <p>You may also contact <a href="mailto:rcu.developer@gmail.com">rcu.developer@gmail.com</a> for any request, and you have the right to lodge a complaint with your local data protection authority.</p>
   </section>
@@ -236,7 +242,7 @@
     <ul>
       <li><b>On your device:</b> kept until you delete it (per trip, or all at once).</li>
       <li><b>Drive backup:</b> kept in your own Google Drive until you delete it or turn off sync.</li>
-      <li><b>Analytics/crash data:</b> retained by Firebase per Google's retention settings; only exists if you opted in.</li>
+      <li><b>Crash reports:</b> retained by Firebase Crashlytics per Google's retention settings; on by default, stops when you turn it off. <b>Usage analytics:</b> only exists if you opted in.</li>
     </ul>
     <p>Snapshots are <b>encrypted before upload</b>, access tokens are stored in the device's secure keystore, and all network traffic uses <b>HTTPS</b>. Some services above (Google/Firebase and the open-data providers) may process requests on servers <b>outside the EU</b>, under their own safeguards for international transfers.</p>
   </section>
