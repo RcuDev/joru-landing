@@ -124,7 +124,7 @@
   <span class="eyebrow">Legal · Privacy</span>
   <h1>Privacy Policy</h1>
   <p class="lede">Joru is a travel planner whose AI runs on your device. This policy explains what data the app handles, what stays on your phone, what leaves it and why, and the controls you have. Plain language first, details below.</p>
-  <p class="updated mono">Last updated: 16 July 2026 · Applies to the Joru app for Android</p>
+  <p class="updated mono">Last updated: 6 August 2026 · Applies to the Joru app for Android and iOS</p>
 
   <div class="summary">
     <h2>The short version</h2>
@@ -143,7 +143,7 @@
   <section class="band">
     <span class="eyebrow">Who we are</span>
     <h2>Data controller</h2>
-    <p>Joru is developed by <b>RcuDev</b> (individual developer, Spain — EU). For any privacy question or data request, contact <a href="mailto:rcu.developer@gmail.com">rcu.developer@gmail.com</a>. “Joru” is a working name for the app while in development.</p>
+    <p>Joru is developed and published by <b>RcuDev</b> (individual developer, Spain — EU). For any privacy question or data request, contact <a href="mailto:corvo.ai.studio@gmail.com">corvo.ai.studio@gmail.com</a>.</p>
   </section>
 
   <section class="band">
@@ -169,6 +169,8 @@
       <li><b>Wikivoyage / Wikipedia</b> — area guides and place descriptions and images.</li>
       <li><b>Open-Meteo</b> — weather for your destination and dates.</li>
       <li><b>MapTiler</b> — interactive map tiles when you open the map.</li>
+      <li><b>Frankfurter</b> (European Central Bank rates) — converting your budget between currencies. Only the two currency codes are sent, never an amount.</li>
+      <li><b>GitHub</b> — Joru downloads a <b>pre-built map extract</b> of the region you are planning (a file of tens of MB, cached on your device so it is fetched once per region). Only the file name of the region is requested; no trip information is sent.</li>
     </ul>
     <p>Map data © OpenStreetMap contributors (ODbL); guides from Wikivoyage (CC BY-SA); forecasts from Open-Meteo. The <b>AI model runs locally</b> on your device — your preferences and itinerary are never sent to a cloud AI provider.</p>
   </section>
@@ -178,11 +180,16 @@
     <h2>Sign-in, sync, analytics and purchases</h2>
     <p>These features send data off your device, so each is <b>optional</b> and, where required, asks for your consent.</p>
 
-    <h3>Sync with your own Google Drive <span class="tagpill">Optional</span></h3>
-    <p>If you turn on sync, Joru saves a copy of your trips to your <b>own Google Drive private app storage</b> (the app can only see files it created; it cannot read the rest of your Drive). The snapshot is <b>encrypted before upload</b>, and your Google access token is kept in the device's secure storage, never in plain text. You can disable sync or revoke Joru's access from your Google Account at any time.</p>
+    <h3>Sync with your own cloud <span class="tagpill">Optional</span></h3>
+    <p>If you turn on sync, Joru saves a copy of your trips to <b>your own cloud storage</b> — <b>Google Drive</b> on Android, <b>iCloud</b> on iOS. Never to a server of ours: we have no backend and never receive a copy of your trips.</p>
+    <ul>
+      <li><b>Google Drive:</b> the copy goes to the <b>private app storage</b> of your Drive — Joru can only see files it created and cannot read the rest of your Drive. Your access token is kept in the device's secure storage, never in plain text. You can disable sync or revoke Joru's access from your Google Account at any time.</li>
+      <li><b>iCloud:</b> the copy goes to <b>your own private iCloud database</b>, tied to your Apple Account and inaccessible to us. You can disable sync in the app, or remove Joru's data from iCloud in your device settings.</li>
+    </ul>
+    <p>In both cases the snapshot is <b>encrypted before upload</b>.</p>
 
-    <h3>Google Sign-in <span class="tagpill">Optional</span></h3>
-    <p>Signing in with Google is only used to enable Drive sync. Joru receives a basic account identifier and an authorization token for Drive; it does not post anything to your account or read your other Google data.</p>
+    <h3>Sign-in <span class="tagpill">Optional</span></h3>
+    <p>Signing in is only used to enable sync, and only with the provider for your platform: <b>Google Sign-in</b> on Android and <b>Sign in with Apple</b> on iOS. Joru receives a basic account identifier and an authorization token for the storage; it does not post anything to your account or read your other data. Sign in with Apple lets you <b>hide your email address</b> if you prefer.</p>
 
     <h3>Crash reports &amp; usage analytics <span class="tagpill">Firebase</span></h3>
     <p>Joru uses <b>Google Firebase</b> for two separate things, with two separate controls in Settings:</p>
@@ -191,9 +198,10 @@
       <li><b>Usage analytics — opt-in, off by default.</b> Anonymous in-app events that help us improve the app. This <b>only starts if you turn it on</b> — either from the one-time prompt on first launch or the toggle in Settings — and you can turn it off again anytime.</li>
     </ul>
     <p>Neither uses your advertising ID. The app also uses Firebase Remote Config to adjust settings (such as the on-device model), which does not require personal data.</p>
+    <p><b>On iOS</b>, if you turn usage analytics on, the system's <b>App Tracking Transparency</b> prompt is shown first — and only then; if you leave analytics off, Joru never asks. Joru does <b>not</b> track you across other apps or websites in any case.</p>
 
     <h3>Premium purchases <span class="tagpill">Optional</span></h3>
-    <p>Premium (a subscription or a one-time lifetime purchase) is handled by <b>Google Play Billing</b> and <b>RevenueCat</b>, which manage the purchase and unlock your entitlement. RevenueCat receives an anonymous app-user identifier and the purchase token; <b>we never receive your payment card details</b> — those are handled by Google Play.</p>
+    <p>Premium (a subscription or a one-time lifetime purchase) is handled by the store you installed from — <b>Google Play Billing</b> on Android, the <b>Apple App Store</b> on iOS — together with <b>RevenueCat</b>, which unlocks your entitlement across your devices. RevenueCat receives an anonymous app-user identifier and the purchase token; <b>we never receive your payment card details</b> — those are handled entirely by Google or Apple.</p>
   </section>
 
   <section class="band">
@@ -213,11 +221,12 @@
         <tbody>
           <tr><td>Trip details &amp; preferences</td><td>Build your itinerary</td><td>On your device</td><td>Providing the service</td></tr>
           <tr><td>Destination / map queries</td><td>Fetch real places, weather, maps</td><td>Sent to open-data services</td><td>Providing the service</td></tr>
-          <tr><td>Trips backup</td><td>Sync across your devices</td><td>Your own Google Drive (encrypted)</td><td>Your consent</td></tr>
-          <tr><td>Google account token</td><td>Enable Drive sync</td><td>Device secure storage</td><td>Your consent</td></tr>
+          <tr><td>Region name</td><td>Download the offline map extract</td><td>Sent to GitHub; file cached on device</td><td>Providing the service</td></tr>
+          <tr><td>Trips backup</td><td>Sync across your devices</td><td>Your own Google Drive or iCloud (encrypted)</td><td>Your consent</td></tr>
+          <tr><td>Account token</td><td>Enable sync</td><td>Device secure storage</td><td>Your consent</td></tr>
           <tr><td>Crash reports</td><td>Fix bugs, keep app stable</td><td>Firebase Crashlytics</td><td>Legitimate interest (opt-out)</td></tr>
           <tr><td>Usage analytics</td><td>Improve the app</td><td>Firebase (if enabled)</td><td>Your consent (opt-in)</td></tr>
-          <tr><td>Purchase token</td><td>Unlock Premium</td><td>Google Play &amp; RevenueCat</td><td>Providing the service</td></tr>
+          <tr><td>Purchase token</td><td>Unlock Premium</td><td>Google Play or App Store, &amp; RevenueCat</td><td>Providing the service</td></tr>
         </tbody>
       </table>
     </div>
@@ -230,10 +239,10 @@
     <p>You can exercise your rights directly in the app, without contacting anyone:</p>
     <ul>
       <li><b>Access &amp; portability:</b> export all your trips from the app.</li>
-      <li><b>Erasure:</b> open <b>Settings → Data → “Delete all local data”</b> in the app to wipe everything stored on the device (trips, expenses, packing lists and preferences). Disabling and deleting your Drive backup removes the synced copy from your own Drive.</li>
+      <li><b>Erasure:</b> open <b>Settings → Data → “Delete all local data”</b> in the app to wipe everything stored on the device (trips, expenses, packing lists and preferences). Disabling sync and deleting the backup removes the synced copy from your own Drive or iCloud.</li>
       <li><b>Withdraw consent / object:</b> turn usage analytics or crash reports off, or disable sync, in Settings at any time.</li>
     </ul>
-    <p>You may also contact <a href="mailto:rcu.developer@gmail.com">rcu.developer@gmail.com</a> for any request, and you have the right to lodge a complaint with your local data protection authority.</p>
+    <p>You may also contact <a href="mailto:corvo.ai.studio@gmail.com">corvo.ai.studio@gmail.com</a> for any request. If you are unhappy with how we handle it, you have the right to lodge a complaint with your local data protection authority — in Spain, the <b>Agencia Española de Protección de Datos</b> (<a href="https://www.aepd.es">aepd.es</a>).</p>
   </section>
 
   <section class="band">
@@ -241,7 +250,7 @@
     <h2>How long, and how it's protected</h2>
     <ul>
       <li><b>On your device:</b> kept until you delete it (per trip, or all at once).</li>
-      <li><b>Drive backup:</b> kept in your own Google Drive until you delete it or turn off sync.</li>
+      <li><b>Cloud backup:</b> kept in your own Google Drive or iCloud until you delete it or turn off sync.</li>
       <li><b>Crash reports:</b> retained by Firebase Crashlytics per Google's retention settings; on by default, stops when you turn it off. <b>Usage analytics:</b> only exists if you opted in.</li>
     </ul>
     <p>Snapshots are <b>encrypted before upload</b>, access tokens are stored in the device's secure keystore, and all network traffic uses <b>HTTPS</b>. Some services above (Google/Firebase and the open-data providers) may process requests on servers <b>outside the EU</b>, under their own safeguards for international transfers.</p>
@@ -271,14 +280,14 @@
   <div class="foot-grid">
     <div>
       <a class="brand" href="./index.html" style="font-size:1rem;"><span class="pin" aria-hidden="true"></span> Joru</a>
-      <p class="attrib" style="margin:.7rem 0 0;">On-device AI travel planner. Currently in development — “Joru” is a working name.</p>
+      <p class="attrib" style="margin:.7rem 0 0;">On-device AI travel planner for Android and iOS.</p>
     </div>
     <div class="attrib">
       Built on open data — map data © OpenStreetMap contributors (ODbL), guides from Wikivoyage (CC BY-SA), forecasts from Open-Meteo.
     </div>
     <div>
-      Contact · <a href="mailto:rcu.developer@gmail.com">rcu.developer@gmail.com</a><br>
-      <a href="./index.html">Home</a> · <span class="mono" style="font-size:.8rem;">Made by RcuDev · 2026</span>
+      Contact · <a href="mailto:corvo.ai.studio@gmail.com">corvo.ai.studio@gmail.com</a><br>
+      <a href="./index.html">Home</a> · <a href="./terms.html">Terms of use</a> · <span class="mono" style="font-size:.8rem;">Made by RcuDev · 2026</span>
     </div>
   </div>
 </footer>
